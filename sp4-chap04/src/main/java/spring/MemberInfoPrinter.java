@@ -1,13 +1,19 @@
 package spring;
 
-public class MemberInfoService {
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class MemberInfoPrinter {
+	
+	@Autowired
 	private MemberDao memDao;
 	private MemberPrinter printer;
+	
 	
 	public void setMemberDao(MemberDao memberDao){
 		this.memDao = memberDao;
 	}
 	
+	@Autowired
 	public void setPrinter(MemberPrinter printer){
 		this.printer = printer;
 	}
@@ -22,5 +28,5 @@ public class MemberInfoService {
 		printer.print(member);
 		System.out.println();
 	}
-
+	
 }
