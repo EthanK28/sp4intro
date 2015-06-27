@@ -2,9 +2,8 @@ package spring;
 
 public class ChangePasswordService {
 	private MemberDao memberDao;
-
-	public ChangePasswordService(MemberDao memberDao) {
 	
+	public ChangePasswordService(MemberDao memberDao){
 		this.memberDao = memberDao;
 	}
 	
@@ -13,12 +12,9 @@ public class ChangePasswordService {
 		if(member == null)
 			throw new MemberNotFoundException();
 		
-		member.changePassword(oldPwd, newPwd);
+		member.changePassrod(oldPwd, newPwd);
 		
 		memberDao.update(member);
-		
+				
 	}
-	
-	
-	
 }
