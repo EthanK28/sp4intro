@@ -11,7 +11,14 @@
 
 
 	<bean id="memberDao" class="spring.MemberDao">
-    
-  </bean>
+  	</bean>
+  	
+  	<bean id="memberRegsvc" class="spring.MemberregisterService">
+  		<constructor-arg ref="memberDao"/>
+  	</bean>
+  	
+  	<bean id="changePwdSvc" class="spring.ChangePasswordService">
+  		<constructor-arg ref="memberDao"/>
+  	</bean>
 		
 </beans>
